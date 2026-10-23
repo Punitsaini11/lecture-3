@@ -8,14 +8,16 @@ use("HospitalDB");
 //     name: "Dr. Smith",
 //     specialty: "Cardiology",
 //     experience: 10,
-//     hospital: "General Hospital"        
+//     hospital: "General Hospital",
+//     fees: 15000      
 // })
 
 // db.doctors.insertOne({
 //     name: "Dr. Johnson",
 //     specialty: "Neurology",
 //     experience: 8,
-//     hospital: "City Hospital"
+//     hospital: "City Hospital",
+//     fees: 18000
 // })
 
 // db.doctors.insertMany([
@@ -23,13 +25,15 @@ use("HospitalDB");
 //         name: "Dr. Williams",
 //         specialty: "Pediatrics",
 //         experience: 5,
-//         hospital: "Children's Hospital"
+//         hospital: "Children's Hospital",
+//         fees: 12000
 //     },
 //     {
 //         name: "Dr. Brown",
 //         specialty: "Orthopedics",
 //         experience: 12,
-//         hospital: "Sports Medicine Center"
+//         hospital: "Sports Medicine Center",
+//         fees: 15000
 //     }
 // ])  
 
@@ -53,5 +57,35 @@ use("HospitalDB");
 // )   
 
 // delete operation 1.deleteOne() 2.deleteMany()
-db.doctors.deleteOne({ name: "Dr. Johnson" })  
+// db.doctors.deleteOne({ name: "Dr. Johnson" })
+
+// db.doctors.find(
+//     { experience: { $gt: 5 } }
+// )
  
+// db.doctors.find(
+//     { specialty: { $eq: "Cardiology" } }
+// )
+
+// db.doctors.find(
+//     { 
+//         experience: { $gte: 5, $lte: 10 } }
+// )   
+
+// db.doctors.find({
+//     $or: [
+//         { specialty: "Cardiology" },
+//         { fees: { $lt: 15000 } }
+//     ]}
+
+// )
+
+// db.doctors.find({}, { name: 1, specialty: 1})
+
+// db.doctors.find().limit(2)
+// db.doctors.find().skip(2).limit(2)
+
+db.doctors.find().sort({ fees: -1 }) //ascending order 1,2,3,4,5
+
+
+
