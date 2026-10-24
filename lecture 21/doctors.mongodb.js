@@ -86,6 +86,7 @@ use("HospitalDB");
 // db.doctors.find().skip(2).limit(2)
 
 db.doctors.find().sort({ fees: -1 }) //ascending order 1,2,3,4,5
+db.doctors.find().sort({ fees: 1 }) //descending order 5,4,3,2,1
 
 
 
