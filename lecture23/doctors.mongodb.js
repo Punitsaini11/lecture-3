@@ -28,32 +28,39 @@
     
 // ])
 
-db.doctors.aggregate([
-    {
-        $match: {
-            specialty: "Cardiology"
-        }
-    },
-    {
-        $project: {
-            name:1,
-            _id:0,
-            fees:1,
-            salary:1,
-            experience:1
+// db.doctors.aggregate([
+//     {
+//         $match: {
+//             specialty: "Cardiology"
+//         }
+//     },
+//     {
+//         $project: {
+//             name:1,
+//             _id:0,
+//             fees:1,
+//             salary:1,
+//             experience:1
          
-        }
-    },
-    {
-        $group: {
-            _id: "$specialty",
-            totalFees: { $sum: "$fees" },
-            maxsalary: { $max: "$salary" },
-            averageSalary: { $avg: "$salary" },
-            totalExperience: { $sum: "$experience" }
-        }
-    },
-    {
-        $sort: { totalFees: -1 }
-    }
-])  
+//         }
+//     },
+//     {
+//         $group: {
+//             _id: "$specialty",
+//             totalFees: { $sum: "$fees" },
+//             maxsalary: { $max: "$salary" },
+//             averageSalary: { $avg: "$salary" },
+//             totalExperience: { $sum: "$experience" }
+//         }
+//     },
+//     {
+//         $sort: { totalFees: -1 }
+//     },
+//     // {
+//     //     $limit: 1
+//     // }
+//     {
+//         $count: 'fees'
+//     }
+// ])  
+
