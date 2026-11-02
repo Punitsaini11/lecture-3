@@ -1,3 +1,5 @@
+const Doctor = require('./model/doctors.model')
+
 const getDoctors = async (req, res) => {
     try {
         const doctors = await Doctor.find();
