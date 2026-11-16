@@ -1,6 +1,6 @@
 // use("HospitalDB")
 
-// db.docrtors.insertMany([
+// db.doctors.insertMany([
 //     {
 //         name: "Dr.Pulkit",
 //         specialty: "Cardiology",
@@ -63,4 +63,12 @@
 //         $count: 'fees'
 //     }
 // ])  
+
+// db.doctors.getIndexes()
+// db.doctors.find({name:"Dr.Pulkit"})
+
+// db.doctors.createIndex({name:1})
+// db.doctors.getIndexes()
+
+
 
